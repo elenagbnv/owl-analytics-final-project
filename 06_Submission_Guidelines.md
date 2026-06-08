@@ -52,6 +52,7 @@ final_project/
 ├── part3_spark_analytics.ipynb
 ├── scripts/
 │   ├── get_one_record.py
+│   ├── save_dictionary_to_csv.py
 │   └── mess_my_data.py
 ├── reports/
 │   ├── report_to_stelios.md

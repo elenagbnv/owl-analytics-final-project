@@ -6,9 +6,11 @@ Elena gives you your first task:
 
 > "We need a reliable script that downloads market data. The API is public, but please do not send too many requests at the same time. Also, I want a proper log file because we need to know what happened if something fails."
 
-## First Step: Test the API
+## First Step: Run the Starter Scripts
 
-Before you build the full downloader, run the given example script:
+Before you build the full downloader, run the two small starter scripts.
+
+First, run the API example:
 
 ```bash
 python scripts/get_one_record.py
@@ -20,7 +22,19 @@ This script downloads one `BTCUSDT` record and saves it as:
 data/clean/one_record.csv
 ```
 
-Open the script and read it carefully. It shows the basic idea you will reuse in your own `part1_build_dataset.py`: call the API, read the response, map the fields, and write a CSV row.
+Then run the dictionary-to-CSV example:
+
+```bash
+python scripts/save_dictionary_to_csv.py
+```
+
+This script saves one Python dictionary as:
+
+```txt
+data/clean/example_dictionary_row.csv
+```
+
+Open both scripts and read them carefully. Together, they show the basic ideas you will reuse in your own `part1_build_dataset.py`: call the API, read the response, map the fields into dictionaries, and write CSV rows.
 
 ## API
 
@@ -37,6 +51,8 @@ Example request:
 ```txt
 https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&limit=1000
 ```
+
+The `limit` parameter controls how many kline records the API returns for one symbol. In `scripts/get_one_record.py`, `limit=1` is used only to test the API with one row. In your full downloader, use `limit=1000`. Binance documents `1000` as the maximum `limit` for this kline endpoint, so one request can return up to 1,000 records for one symbol.
 
 Useful documentation:
 
