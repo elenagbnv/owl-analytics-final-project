@@ -16,21 +16,20 @@ Start here:
 
 ## Starter Structure
 
-The repository includes empty folders for the files you will generate:
+The repository includes folders for the files you will generate:
 
 ```txt
 data/clean/
 data/messy/
 results/
 reports/
-scripts/
 ```
 
-The datasets, logs, notebooks, and result files should be created by your own code during the project. Do not commit a `.venv/` folder.
+Your datasets, logs, notebooks, reports, and result files should be created by your own code during the project. Do not commit a `.venv/` folder.
 
 ### Provided Scripts
 
-The `scripts/` folder contains small helper scripts:
+The `scripts/` folder already contains small helper scripts:
 
 - `get_one_record.py`: tests the Binance API by downloading one `BTCUSDT` record.
 - `save_dictionary_to_csv.py`: shows how to save one Python dictionary as a CSV row.
