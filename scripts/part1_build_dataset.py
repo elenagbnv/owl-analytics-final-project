@@ -30,7 +30,7 @@ fieldnames = [
     "taker_buy_quote_volume",
 ]
 
-dowload_control= Semaphore (100)    # max of 100 API requests per minute
+download_control= Semaphore (100)    # max of 100 API requests per minute
 writer_lock = threading.Lock()      # lock to write into the shared CSV
 
 
@@ -40,7 +40,7 @@ def get_data(symbol):
             "interval": "1h",
             "limit": 1000,
         }
-        with dowload_control:
+        with download_control:
             start = time.perf_counter()                                     # logging wait time #start
             sleep(60)                                                       # wait time detected
             end = time.perf_counter()                                       # logging wait time #end
