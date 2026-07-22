@@ -1,4 +1,5 @@
 
+
 import csv
 from pathlib import Path
 from threading import Thread, Semaphore, Lock
@@ -29,9 +30,9 @@ fieldnames = [
     "taker_buy_quote_volume",
 ]
 
-dowload_control= Semaphore (100)  #  maximum of 100 API requests per minute
+dowload_control= Semaphore (100)    # max of 100 API requests per minute
+writer_lock = threading.Lock()      # lock to write into the shared CSV
 
-# message_lock = threading.Lock()  
 
 def get_data(symbol):
         params = {
@@ -71,12 +72,10 @@ def get_data(symbol):
                 }
                 for record in records
             ]
-             
-            with output_path.open("a", newline="", encoding="utf-8") as file:
+            with writer_lock:
+                with output_path.open("a", newline="", encoding="utf-8") as file:
                     writer = csv.DictWriter(file, fieldnames=fieldnames)
-                    writer.writeheader()
-                    writer.writerows(rows)
-            # print(f"{symbol}: 1000 records saved to {output_path}") # 4, capture saving each symbol data
+                    writer.writerows(rows)               
         
 if __name__ == "__main__":
     
@@ -84,9 +83,16 @@ if __name__ == "__main__":
         "BTCUSDT", "ETHUSDT", "BNBUSDT", "SOLUSDT", "XRPUSDT",
         "ADAUSDT", "DOGEUSDT", "AVAXUSDT", "LINKUSDT", "DOTUSDT",
     ]
+
+    # writing header for the output file only once:
+    with output_path.open("w", newline="", encoding="utf-8") as file:
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writeheader()
+
     print("Starting multithreaded download for 10 symbols.") # 1 worked
     print("Request limit: 100 requests per minute.") # 2 worked
     print("Current request batch allowed.") # 3 worked
+
     with ThreadPoolExecutor(max_workers=1000) as executor:
          executor.map(get_data, symbols)
     print("Multithreaded download complete.")
@@ -94,6 +100,14 @@ if __name__ == "__main__":
 
    
    
+
+
+   
+
+   
+   
+
+
 
 
    
