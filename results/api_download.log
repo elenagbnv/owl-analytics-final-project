@@ -1,0 +1,22 @@
+[2026-07-22T11:22:49Z] [ThreadPoolExecutor-0_0] START request symbol=BTCUSDT interval=1h limit=1000
+[2026-07-22T11:22:49Z] [ThreadPoolExecutor-0_4] START request symbol=XRPUSDT interval=1h limit=1000
+[2026-07-22T11:22:49Z] [ThreadPoolExecutor-0_2] START request symbol=BNBUSDT interval=1h limit=1000
+[2026-07-22T11:22:49Z] [ThreadPoolExecutor-0_3] START request symbol=SOLUSDT interval=1h limit=1000
+[2026-07-22T11:22:49Z] [ThreadPoolExecutor-0_1] START request symbol=ETHUSDT interval=1h limit=1000
+[2026-07-22T11:22:49Z] [ThreadPoolExecutor-0_6] START request symbol=DOGEUSDT interval=1h limit=1000
+[2026-07-22T11:22:49Z] [ThreadPoolExecutor-0_5] START request symbol=ADAUSDT interval=1h limit=1000
+[2026-07-22T11:22:49Z] [ThreadPoolExecutor-0_7] START request symbol=AVAXUSDT interval=1h limit=1000
+[2026-07-22T11:22:49Z] [ThreadPoolExecutor-0_8] START request symbol=LINKUSDT interval=1h limit=1000
+[2026-07-22T11:22:49Z] [ThreadPoolExecutor-0_9] START request symbol=DOTUSDT interval=1h limit=1000
+[2026-07-22T11:22:52Z] [ThreadPoolExecutor-0_5] END request symbol=ADAUSDT records=1000
+[2026-07-22T11:22:52Z] [ThreadPoolExecutor-0_2] END request symbol=BNBUSDT records=1000
+[2026-07-22T11:22:52Z] [ThreadPoolExecutor-0_8] END request symbol=LINKUSDT records=1000
+[2026-07-22T11:22:52Z] [ThreadPoolExecutor-0_4] END request symbol=XRPUSDT records=1000
+[2026-07-22T11:22:52Z] [ThreadPoolExecutor-0_7] END request symbol=AVAXUSDT records=1000
+[2026-07-22T11:22:52Z] [ThreadPoolExecutor-0_0] END request symbol=BTCUSDT records=1000
+[2026-07-22T11:22:52Z] [ThreadPoolExecutor-0_1] END request symbol=ETHUSDT records=1000
+[2026-07-22T11:22:52Z] [ThreadPoolExecutor-0_3] END request symbol=SOLUSDT records=1000
+[2026-07-22T11:22:52Z] [ThreadPoolExecutor-0_6] END request symbol=DOGEUSDT records=1000
+[2026-07-22T11:22:52Z] [ThreadPoolExecutor-0_9] END request symbol=DOTUSDT records=1000
+[2026-07-22T11:23:52Z] [MainThread] WROTE csv= clean_market_data.csv, 10000
+[2026-07-22T11:23:52Z] [MainThread] Rate-limit wait events logged: 10
